@@ -19,22 +19,22 @@
 			<div data-role="header">Mech Catalog</div>
 			<div role="main" class="ui-content">
 				<h2>Mechs</h2>
-				<div class="ui-grid-b" id="catalog-container">
-					<div class="ui-block-a"><div class="ui-bar ui-bar-b" style="height:30px">Name</div></div>
-					<div class="ui-block-b"><div class="ui-bar ui-bar-b" style="height:30px">Tonnage</div></div>
-					<div class="ui-block-c"><div class="ui-bar ui-bar-b" style="height:30px">Cost</div></div>
+				
+				<form class="ui-filterable">
+					<input id="catalog-filter" data-type="search">
+				</form>
 
-					<div class="ui-block-a hidden mech-row-base" id="mech-name"><div class="ui-bar ui-bar-a">Name</div></div>
-					<div class="ui-block-b hidden mech-row-base" id="mech-tonnage"><div class="ui-bar ui-bar-a">Tonnage</div></div>
-					<div class="ui-block-c hidden mech-row-base" id="mech-cost"><div class="ui-bar ui-bar-a">Cost</div></div>					
-				</div>
-
+				<ol id="catalog-container" data-role="listview" data-filter="true" data-input="#catalog-filter">
+					<li class="catalog-item-template hidden">NULL</li>
+					<li class="catalog-item">NULL</li>
+				</ol>
+				<hr/>
+				
+				<a href="index.html" class="ui-btn">Back</a>
+				
 				<script type="text/javascript">
 					catalog_populate()
 				</script>
-
-				<!--<button onclick="catalog_populate()">Populate</button>-->
-				<a href="index.html" class="ui-btn">Back</a>
 			</div>
 			<div data-role="footer">
 				&copy; 2015 JohnRowley Co

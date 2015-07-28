@@ -93,39 +93,6 @@ function index_reload_data(){
   });
 }
 
-///////////////////////////////
-/* Functions for the catalog */
-///////////////////////////////
-
-function catalog_populate() {
-  console.log("populating catalog");
-  // clear all mechs from the catalog
-  $(".mech-row").remove();
-
-  // get mechs from localstorage
-  var mechs = JSON.parse(localStorage.getItem("mechs"));
-  
-  // iterate over all of the mechs and append them to the gui
-  mechs.forEach(function (mech) {
-    var cur_dom_mech = $("#catalog .mech-row-base") 
-    .clone()
-    .appendTo($("#catalog-container")) // append to the end of the catalog
-    .removeClass("mech-row-base") // remove template class so multiple duplications wont happen
-    .addClass("mech-row") // add class to make it considered a regular row
-    //.attr("mechid",mech.name)
-    .removeClass("hidden"); // make visible
-
-    $(cur_dom_mech[0]).children().html(mech.name);
-    $(cur_dom_mech[1]).children().text(mech.tonnage);
-    $(cur_dom_mech[2]).children().text(mech.cost);
-    $(cur_dom_mech).click(function(){
-      $.mobile.navigate("catalog-item.html");
-      localStorage.setItem("catalog-item-mech", JSON.stringify(mech));
-      localStorage.setItem("is-catalog-item", true); //to know if status information should attempt to be displayed
-    });
-  });
-}
-
 /////////////////////////////
 /* Functions for list.html */
 /////////////////////////////
@@ -189,6 +156,36 @@ function list_update(){ //updates the gui for the list page
         console.log("Clicked! " + list.name);
           list_active_set(list);
       });
+  });
+}
+
+///////////////////////////////
+/* Functions for the catalog */
+///////////////////////////////
+
+function catalog_populate() {
+  console.log("populating catalog");
+  // clear all mechs from the catalog
+  $(".catalog-item").remove();
+
+  // get mechs from localstorage
+  var mechs = JSON.parse(localStorage.getItem("mechs"));
+  
+  // iterate over all of the mechs and append them to the gui
+  mechs.forEach(function (mech) {
+    var left = "<a href='catalog-item.html'>";
+    var right = "</a>";
+    $("#catalog .catalog-item-template") 
+      .clone()
+      .appendTo($("#catalog-container")) // append to the end of the catalog
+      .removeClass("catalog-item-template") // remove template class so multiple duplications wont happen
+      .addClass("catalog-item") // add class to make it considered a regular row
+      .removeClass("hidden")
+      .html(left + mech.name + right)
+      .click(function(){
+        localStorage.setItem("catalog-item-mech", JSON.stringify(mech));
+        localStorage.setItem("is-catalog-item", true); //to know if status information should attempt to be displayed
+    });
   });
 }
 
