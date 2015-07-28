@@ -115,13 +115,13 @@ function catalog_populate() {
     //.attr("mechid",mech.name)
     .removeClass("hidden"); // make visible
 
-    $(cur_dom_mech[0]).children().text(mech.name);
+    $(cur_dom_mech[0]).children().html(mech.name);
     $(cur_dom_mech[1]).children().text(mech.tonnage);
     $(cur_dom_mech[2]).children().text(mech.cost);
     $(cur_dom_mech).click(function(){
       $.mobile.navigate("catalog-item.html");
       localStorage.setItem("catalog-item-mech", JSON.stringify(mech));
-      localStorage.setItem("is-catalog-item", true);
+      localStorage.setItem("is-catalog-item", true); //to know if status information should attempt to be displayed
     });
   });
 }
@@ -130,7 +130,7 @@ function catalog_populate() {
 /* Functions for list.html */
 /////////////////////////////
 
-function list_get(){ // returns the lists, and initializes if not done already.
+function lists_get(){ // gets the list from localStorage
   var lists = JSON.parse(localStorage.getItem("mech-lists"));
   
   if(lists == null){
@@ -141,37 +141,55 @@ function list_get(){ // returns the lists, and initializes if not done already.
   return lists;
 }
 
-function list_set(lists){
+function lists_set(lists){ //saves the list to localStorage
   localStorage.setItem("mech-lists",JSON.stringify(lists));
 }
 
-function list_create(){
+
+function list_active_set(list){ //saves the active list to localStorage
+  localStorage.setItem("mech-active-list",JSON.stringify(list));
+}
+
+function list_active_get(){ //gets the active list from localStorage
+  var list = JSON.parse(localStorage.getItem("mech-active-list"));
+  if(list != null)
+    return list;
+  return [];
+}
+
+
+function list_create(){ // called from the create list form. Creates a new list and saves it to localStorage
   var name = $("#create-list-page #list-name").val();
 
-  var lists = list_get();
+  var lists = lists_get();
   lists.push({"name":name,"mechs":[]});
-  list_set(lists);
+  lists_set(lists);
 
   list_update();
 }
 
-function list_update(){
+function list_update(){ //updates the gui for the list page
   console.log("Updating List Page");
 
-  var lists = list_get();
+  var lists = lists_get();
 
   $("#list-select #lists .list").remove();
   lists.forEach(function (list) {
+    var left = "<a href='list-view.html'>";
+    var right = "</a>";
+
     $("#list-select #lists .list-template")
       .clone()
       .appendTo("#lists")
       .removeClass("list-template")
       .addClass("list")
       .removeClass("hidden")
-      .text(list.name);
+      .html(left + list.name + right)
+      .click(function(){
+        console.log("Clicked! " + list.name);
+          list_active_set(list);
+      });
   });
-
-
 }
 
 ////////////////////////////////

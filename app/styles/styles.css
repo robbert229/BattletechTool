@@ -9,3 +9,7 @@
 .clear {
 	clear: both;
 }
+
+.mech-row div.ui-bar{
+	height: 40px;
+}
