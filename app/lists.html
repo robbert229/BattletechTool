@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="jquery/jquery-2.1.4.js"></script>
+		<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+
+		<script src="scripts/mech.js"></script>
+		
+		<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+		<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css"/>
+		<link rel="stylesheet" href="styles/styles.css"/>
+	</head>
+	<body>
+	
+		<div data-role="page" id="list-select">
+			<div data-role="header">List Select</div>
+			<div role="main" class="ui-content">
+				<h2>Lists</h2>
+				<ol id="lists" data-role="listview">
+					<li class="list-template hidden">NULL</li>
+					<li class="list">NULL</li>
+				</ol>
+				<a href="create-list-page.html" data-rel="dialog" class="ui-btn">Create List</a>
+				<a href="index.html" class="ui-btn">Back</a>
+			</div>
+
+			<script type="text/javascript">
+				list_update();
+				$("#list-select").on("pageload",function(data) {
+  					list_update();
+  				});
+			</script>
+
+			<div data-role="footer">
+				&copy; 2015 JohnRowley Co
+			</div>
+		</div>
+	</body>
+</html>

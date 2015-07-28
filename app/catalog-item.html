@@ -1,0 +1,205 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="jquery/jquery-2.1.4.js"></script>
+		<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+
+		<script src="scripts/mech.js"></script>
+
+		<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+		<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css"/>
+		<link rel="stylesheet" href="styles/styles.css"/>
+	</head>
+	<body>
+		
+		<div data-role="page" id="catalog-item">
+			<div data-role="header">Mech Stats</div>
+			<div role="main" class="ui-content">
+				<h1 class="mech-name">FOO</h1>				
+				<div data-role="collapsibleset">
+					<div data-role="collapsible">
+						<h2>General</h2>
+						<div class="ui-grid-a">
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">Name</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-name" style="height:30px">NAME</div></div>
+
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">Tonnage</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-tonnage" style="height:30px">NULL</div></div>
+
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">Cost</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-cost" style="height:30px">NULL</div></div>
+							<div class="clear"></div>
+						</div>
+					</div>
+
+					<div data-role="collapsible">
+						<h2>Speed</h2>
+						<div class="ui-grid-a">
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">Walk</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-speed-walk" style="height:30px">NULL</div></div>
+
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">Run</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-speed-run" style="height:30px">NULL</div></div>
+
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">Jump</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-speed-jump" style="height:30px">NULL</div></div>
+							<div class="clear"></div>
+						</div>
+					</div>
+
+					<div data-role="collapsible">
+						<h2>Weapons</h2>
+						<ol id="mech-weapons" data-role="listview">
+							<li class="mech-weapon-template hidden">NULL</li>
+							<li class="mech-weapon">NULL</li>
+							<li class="mech-weapon">NULL</li>
+						</ol>
+					</div>
+
+					<div data-role="collapsible">
+						<h2>Armor</h2>
+						<div class="ui-grid-a">
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">Total Armor</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-total-armor" style="height:30px">NULL</div></div>
+
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">Total Structure</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-total-structure" style="height:30px">NULL</div></div>
+						</div>
+
+						<hr/>
+						
+						<div class="ui-grid-a">
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">head</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-armor-head" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">center-torso</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-armor-center-torso" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">left-torso</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-armor-left-torso" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">right-torso</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-armor-right-torso" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">left-leg</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-armor-left-leg" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">right-leg</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-armor-right-leg" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">left-arm</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-armor-left-arm" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">right-arm</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-armor-right-arm" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">center-torso-rear</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-armor-center-torso-rear" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">left-torso-rear</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-armor-left-torso-rear" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">right-torso-rear</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-armor-right-torso-rear" style="height:30px">NULL</div></div>
+							<div class="clear"></div>
+						</div>
+					</div>
+
+					<div data-role="collapsible">
+						<h2>Structure</h2>
+						<div class="ui-grid-a">
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">head</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-structure-head" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">center-torso</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-structure-center-torso" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">left-torso</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-structure-left-torso" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">right-torso</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-structure-right-torso" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">left-leg</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-structure-left-leg" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">right-leg</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-structure-right-leg" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">left-arm</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-structure-left-arm" style="height:30px">NULL</div></div>
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">right-arm</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-structure-right-arm" style="height:30px">NULL</div></div>
+							<div class="clear"></div>
+						</div>
+					</div>
+
+					<div data-role="collapsible">
+						<h2>Heat</h2>
+						<div class="ui-grid-a">
+							<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px">heat</div></div>
+							<div class="ui-block-b"><div class="ui-bar ui-bar-a mech-heatsinks" style="height:30px">NULL</div></div>
+						</div>
+					</div>
+
+					<div data-role="collapsible">
+						<h2>Crits</h2>
+						<h3>Head</h3>
+						<ul data-role="listview" id="mech-crits-head">
+							<li class="mech-crit-head-template hidden">NULL</li>
+							<li class="mech-crit-head"> NULL</li>
+						</ul>
+						<div class="clear"></div>
+
+						<h3>Left Arm</h3>
+						<ul data-role="listview" id="mech-crits-left-arm">
+							<li class="mech-crit-left-arm-template hidden">NULL</li>
+							<li class="mech-crit-left-arm">NULL</li>
+						</ul>
+						<div class="clear"></div>
+
+						<h3>Left Torso</h3>
+						<ul data-role="listview" id="mech-crits-left-torso">
+							<li class="mech-crit-left-torso-template hidden">NULL</li>
+							<li class="mech-crit-left-torso">NULL</li>
+						</ul>
+						<div class="clear"></div>
+
+						<h3>Right Arm</h3>
+						<ul data-role="listview" id="mech-crits-right-arm">
+							<li class="mech-crit-right-arm-template hidden">NULL</li>
+							<li class="mech-crit-right-arm">NULL</li>
+						</ul>
+						<div class="clear"></div>
+
+						<h3>Right Torso</h3>
+						<ul data-role="listview" id="mech-crits-right-torso">
+							<li class="mech-crit-right-torso-template hidden">NULL</li>
+							<li class="mech-crit-right-torso">NULL</li>
+						</ul>
+						<div class="clear"></div>
+
+						<h3>Center Torso</h3>
+						<ul data-role="listview" id="mech-crits-center-torso">
+							<li class="mech-crit-center-torso-template hidden">NULL</li>
+							<li class="mech-crit-center-torso">NULL</li>
+						</ul>
+						<div class="clear"></div>
+
+						<h3>Left Leg</h3>
+						<ul data-role="listview" id="mech-crits-left-leg">
+							<li class="mech-crit-left-leg-template hidden">NULL</li>
+							<li class="mech-crit-left-leg">NULL</li>
+						</ul>
+						<div class="clear"></div>
+
+						<h3>Right Leg</h3>
+						<ul data-role="listview" id="mech-crits-right-leg">
+							<li class="mech-crit-right-leg-template hidden">NULL</li>
+							<li class="mech-crit-right-leg">NULL</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+
+				</div>
+				<a href="index.html" class="ui-btn">Back</a>
+			</div>
+			<script type="text/javascript">
+				catalog_item_update()
+				$("#catalog-item").on("pageload",function(data) {
+  					catalog_item_update()
+  				});
+			</script>
+			<div data-role="footer">
+				&copy; 2015 JohnRowley Co
+			</div>
+		</div>
+	</body>
+</html>

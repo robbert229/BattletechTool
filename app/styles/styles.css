@@ -1,0 +1,11 @@
+.button {
+	text-decoration: none !important;
+}
+
+.hidden {
+	display:none !important;
+}
+
+.clear {
+	clear: both;
+}

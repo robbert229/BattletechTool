@@ -1,0 +1,142 @@
+{
+    "name":"DV-6M DERVISH",
+    "movement":[5,8,5],
+    "tonnage":55,
+    "cost":4484467,
+    "weapons":[
+        {"name":"LRM10", "location":"RT"},
+        {"name":"LRM10", "location":"LT"},
+        {"name":"Medium Laser", "location":"LA"},
+        {"name":"Medium Laser", "location":"RA"},
+        {"name":"SRM2", "location":"RA"},
+        {"name":"SRM2", "location":"LA"}
+    ],
+    "armor":{
+        "head":7,
+        "center-torso":10,
+        "left-torso":8,
+        "right-torso":8,
+        "left-leg":6,
+        "right-leg":6,
+        "left-arm":4,
+        "right-arm":4,
+        "center-torso-rear":3,
+        "left-torso-rear":4,
+        "right-torso-rear":4
+    },
+    "structure":{
+        "head":3,
+        "center-torso":11,
+        "left-torso":8,
+        "right-torso":8,
+        "left-leg":8,
+        "right-leg":8,
+        "left-arm":6,
+        "right-arm":6
+    },"crits":{
+        "left-arm":[
+            [
+                "Shoulder",
+                "Upper Arm Actuator",
+                "Medium Laser",
+                "Medium Laser",
+                "Roll Again",
+                "Roll Again"
+            ],[
+                "Roll Again",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again"
+            ]
+        ], "left-torso":[
+            [
+                "Jump Jet",
+                "Jump Jet",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again"
+            ],[
+                "Roll Again",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again"
+            ]
+        ], "right-arm":[
+            [
+                "Shoulder",
+                "Upper Arm Actuator",
+                "Medium Laser",
+                "Medium Laser",
+                "Roll Again",
+                "Roll Again"
+            ],[
+                "Roll Again",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again"
+            ]
+        ],
+        "right-torso":[
+            [
+                "Jump Jet",
+                "Jump Jet",
+                "Ammo [SRM4] 25",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again"
+            ],[
+                "Roll Again",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again",
+                "Roll Again"
+            ]
+        ], "head":[
+            "Life Support",
+            "Sensors",
+            "Cockpit",
+            "Heat Sink",
+            "Sensors",
+            "Life Support"
+        ],
+        "center-torso":[
+            [
+                "Engine",
+                "Engine",
+                "Engine",
+                "Gyro",
+                "Gyro",
+                "Gyro"
+            ],[
+                "Gyro",
+                "Engine",
+                "Engine",
+                "Engine",
+                "Jump Jet",
+                "SRM4"
+            ]
+        ], "left-leg":[
+            "Hip",
+            "Upper Leg Actuator",
+            "Lower Leg Actuator",
+            "Foot Actuator",
+            "Roll Again",
+            "Roll Again"
+        ], "right-leg":[
+            "Hip",
+            "Upper Leg Actuator",
+            "Lower Leg Actuator",
+            "Foot Actuator",
+            "Roll Again",
+            "Roll Again"
+        ]
+    },"heatsinks" : 10
+}
